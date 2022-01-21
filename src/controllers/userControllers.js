@@ -27,8 +27,8 @@ exports.login = async (req, res) => {
     try {
         console.log(req.user);
         console.log(req.user.username);
-        const token = jwt.sign({ id: req.user._id }, process.env.JWT_SEC)
-        res.status(200).send({ user: req.user.username, token: token, userId: req.user._id, email: req.user.email }) ///User.findOne() done in auth.js to get username and _id
+        // const token = jwt.sign({ id: req.user._id }, process.env.JWT_SEC)
+        res.status(200).send({ user: req.user.username,  userId: req.user._id, email: req.user.email }) ///User.findOne() done in auth.js to get username and _id
         console.log("logged in");
     } catch (error) {
         console.log(error);
